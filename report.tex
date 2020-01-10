@@ -1,0 +1,110 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+\documentclass{article}
+%
+\usepackage{subfig}
+\usepackage{graphicx}
+
+\usepackage{cite}
+
+\usepackage{todonotes}
+
+\usepackage[utf8]{inputenc}
+\usepackage[acronym]{glossaries}
+
+%---------Tree:Begin-----------------
+\usepackage{tikz}
+%%%<
+\usepackage{verbatim}
+%%%>
+\usetikzlibrary{trees}
+%----------Tree:End------------------
+
+%----------Glossary:Start------------
+\makeglossaries
+
+% Sample glossary entry
+\newglossaryentry{maths}
+{
+    name=mathematics,
+    description={Mathematics is what mathematicians do}
+}
+
+% Sample acronym
+\newacronym{mt}{MT}{Math Teachers}
+
+%----------Glossary:End--------------
+
+%----------Title:Start---------------
+\title{The \LaTeX\  IPA Template}
+\author{Max Muster}
+\date{1. Mai 2020}
+%\institute{Quality \& Quantity GmbH, Musterstrasse 12, 0000 Stadt}
+%----------Title:End-----------------
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\tableofcontents
+
+%Start of Report
+\part{Umfeld und Ablauf}
+\section{Zielgruppe}
+\Gls{maths} is very Important for \acrfull{mt}
+\section{Aufgabenstellung (gemäss PkOrg)}
+\begin{itemize}
+    \item{}
+    \item{}
+    \item{}
+    \item{}
+\end{itemize}
+\section{Deklaration der Firmenstandards}
+\section{Projektaufbauorganigramm}
+\section{Organisation}
+\section{Ablauf}
+\section{Meilensteine}
+\section{Zeitplan}
+\section{Arbeitsjournal}
+\section{Projektjournal}
+
+\part{Projekt-Dokumentation}
+\section{Kurzfassung}
+\section{Initialisierung}
+\begin{figure}[h!]
+    \subfloat[Ich beim Arbeiten]{\label{me_working:a}\includegraphics[width=0.3\columnwidth]{figures/hard_working_1.jpg}}
+    \hfill
+    \subfloat[Ich beim Arbeiten]{\label{me_working:b}\includegraphics[width=0.3\columnwidth]{figures/hard_working_2.jpg}}
+    \hfill
+    \subfloat[Ich beim Arbeiten]{\label{me_working:c}\includegraphics[width=0.3\columnwidth]{figures/hard_working_3.jpg}}
+    \label{me_working}
+    \caption{Drei Beispiele wie ich gearbeitet habe.}
+\end{figure}
+\section{Konzeptphase}
+\section{Realisierung}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\columnwidth]{figures/my_product.jpg}
+    \caption{Ein Bild meiner Software}
+    \label{my_product}
+\end{figure}
+\section{Testphase}
+\section{Einführung}
+\section{Schlusswort}
+
+
+\newpage
+
+\setcounter{tocdepth}{1}
+\listoffigures
+
+\newpage
+\printglossary[type=\acronymtype]
+\newpage
+\printglossary
+
+
+\end{document}
