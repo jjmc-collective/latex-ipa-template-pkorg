@@ -4,20 +4,19 @@
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
 
+\usepackage[acronym]{glossaries}
+\usepackage{cite}
+
+\usepackage{fancyhdr}
+
 \usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{subfig}
 \usepackage{graphicx}
+\usepackage{array}
 
-\usepackage{cite}
-
+% Dev Packages
 \usepackage{todonotes}
-
-\usepackage[utf8]{inputenc}
-\usepackage[acronym]{glossaries}
-
-% Add dotted lines to TOC
-\usepackage{tocloft}
 
 %---------Tree:Begin-----------------
 \usepackage{tikz}
@@ -26,6 +25,37 @@
 %%%>
 \usetikzlibrary{trees}
 %----------Tree:End------------------
+
+%---------Variables:Begin------------
+\newcommand{\ipatitle}{IPA \LaTeX\ Template}
+\newcommand{\ipaauthor}{Max Muster}
+\newcommand{\ipadate}{1. Mai 2020}
+\newcommand{\ipaversion}{10}
+\newcommand{\ipacompany}{Example GmbH}
+\newcommand{\ipacompanyaddress}{Musterstrasse 4}
+\newcommand{\ipacompanycity}{4000 Stadt}
+\newcommand{\ipacompanynumber}{079 999 99 99}
+\newcommand{\ipacompanyemail}{max.muster@example.com}
+%----------Variables:End-------------
+
+%----------HeaderFooter:Start--------
+\pagestyle{fancy} % Set custom page style
+\fancyhf{} % clear all existing fields
+\setlength{\headheight}{23pt} 
+\rhead{
+    \acrlong{ipa} \\
+    \ipatitle
+    }
+\lhead{\ipacompany}
+\lfoot{
+    \textbf{\ipacompany} \\
+    \ipaauthor \\
+    \ipacompanyaddress \\
+    \ipacompanycity
+}
+\rfoot{Page \thepage}
+
+%----------HeaderFooter:End----------
 
 %----------Glossary:Start------------
 \makeglossaries
@@ -40,27 +70,32 @@
 % Sample acronym
 \newacronym{mt}{MT}{Math Teachers}
 
+\newacronym{ipa}{IPA}{Individuelle Praktische Arbeit}
+
 %----------Glossary:End--------------
 
 %----------Title:Start---------------
-\title{The \LaTeX\  IPA Template}
-\author{Max Muster}
-\date{1. Mai 2020}
+\title{
+    \acrlong{ipa} \\
+    \textbf{\ipatitle}
+}
+\author{\ipaauthor}
+\date{\ipadate}
 %\institute{Quality \& Quantity GmbH, Musterstrasse 12, 0000 Stadt}
 %----------Title:End-----------------
 
 \begin{document}
 
 \maketitle
-
 \newpage
+
 \begin{table}
     \begin{tabularx}{0.5\textwidth}{l l}
-        \textbf{Autor} & Max Muster \\
+        \textbf{Autor} & \ipaauthor \\
         \hline
-        \textbf{Datum} & 1. Mai 2020 \\
+        \textbf{Datum} & \ipadate \\
         \hline
-        \textbf{Thema} & IPA Titel \\
+        \textbf{Thema} & \ipatitle \\
         \hline
     \end{tabularx}
 \end{table}
@@ -78,13 +113,13 @@
 \end{table}
 \begin{table}
     \begin{tabularx}{1.0\textwidth}{l l}
-        \textbf{Version} & 10.0 \\
+        \textbf{Version} & \ipaversion \\
         \hline
         \textbf{Ersetzt Version} & - \\
         \hline
-        \textbf{Ausgabedatum} & 1. Mai 2020 \\
+        \textbf{Ausgabedatum} & \ipadate \\
         \hline
-        \textbf{Gültig ab} & 1. Mai 2020\\
+        \textbf{Gültig ab} & \ipadate \\
         \hline
         \textbf{Gültig bis} & - \\
         \hline
