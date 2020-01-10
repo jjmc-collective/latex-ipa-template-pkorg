@@ -1,9 +1,11 @@
-% This is samplepaper.tex, a sample chapter demonstrating the
-% LLNCS macro package for Springer Computer Science proceedings;
-% Version 2.20 of 2017/10/04
-%
+% This is a Template for your IPA Documentation
+
 \documentclass{article}
-%
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+
+\usepackage{multirow}
+\usepackage{tabularx}
 \usepackage{subfig}
 \usepackage{graphicx}
 
@@ -13,6 +15,9 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[acronym]{glossaries}
+
+% Add dotted lines to TOC
+\usepackage{tocloft}
 
 %---------Tree:Begin-----------------
 \usepackage{tikz}
@@ -49,18 +54,61 @@
 \maketitle
 
 \newpage
+\begin{table}
+    \begin{tabularx}{0.5\textwidth}{l l}
+        \textbf{Autor} & Max Muster \\
+        \hline
+        \textbf{Datum} & 1. Mai 2020 \\
+        \hline
+        \textbf{Thema} & IPA Titel \\
+        \hline
+    \end{tabularx}
+\end{table}
+\begin{table}
+    \begin{tabularx}{1.0\textwidth}{l l l}
+        \multirow{3}{*}{\textbf{Geht an}} & Hauptexperte & Name Expert 1 \\
+        \cline{2-3}
+        & Nebenexperte & Name Expert 2 \\
+        \cline{2-3}
+        & Verantwortliche Fachkraft & Name VeFa \\
+        \cline{1-3}
+        \textbf{Zur Kenntnis} & Berufsbildner & Name Berufsbildner \\
+        \cline{1-3}
+    \end{tabularx}
+\end{table}
+\begin{table}
+    \begin{tabularx}{1.0\textwidth}{l l}
+        \textbf{Version} & 10.0 \\
+        \hline
+        \textbf{Ersetzt Version} & - \\
+        \hline
+        \textbf{Ausgabedatum} & 1. Mai 2020 \\
+        \hline
+        \textbf{Gültig ab} & 1. Mai 2020\\
+        \hline
+        \textbf{Gültig bis} & - \\
+        \hline
+        \textbf{Dokumentname} & \jobname.tex \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\clearpage
+
 \tableofcontents
 
 %Start of Report
+\newpage
 \part{Umfeld und Ablauf}
+\newpage
 \section{Zielgruppe}
 \Gls{maths} is very Important for \acrfull{mt}
 \section{Aufgabenstellung (gemäss PkOrg)}
 \begin{itemize}
-    \item{}
-    \item{}
-    \item{}
-    \item{}
+    \item{Wichtige Anforderung 1}
+    \item{Wichtige Anforderung 1}
+    \item{Wichtige Anforderung 1}
+    \item{Nicht-Funktionale-Anforderung 1}
 \end{itemize}
 \section{Deklaration der Firmenstandards}
 \section{Projektaufbauorganigramm}
@@ -69,19 +117,33 @@
 \section{Meilensteine}
 \section{Zeitplan}
 \section{Arbeitsjournal}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l | l | l}
+    A & B & C \\
+    \hline
+    1 & 2 & 3 \\
+    4 & 5 & 6
+    \end{tabular}
+    \caption{very basic table}
+    \label{tab:abc}
+    \end{table}
 \section{Projektjournal}
 
+\newpage
 \part{Projekt-Dokumentation}
+\newpage
 \section{Kurzfassung}
 \section{Initialisierung}
+In Abb. \ref{fig:me_working} sieht man mich arbeiten. Abb. \ref{fig:me_working:b} zeigt meinen Arbeitsplatz sehr schön.
 \begin{figure}[h!]
-    \subfloat[Ich beim Arbeiten]{\label{me_working:a}\includegraphics[width=0.3\columnwidth]{figures/hard_working_1.jpg}}
+    \subfloat[Ich beim Arbeiten]{\label{fig:me_working:a}\includegraphics[width=0.3\columnwidth]{figures/hard_working_1.jpg}}
     \hfill
-    \subfloat[Ich beim Arbeiten]{\label{me_working:b}\includegraphics[width=0.3\columnwidth]{figures/hard_working_2.jpg}}
+    \subfloat[Ich beim Arbeiten]{\label{fig:me_working:b}\includegraphics[width=0.3\columnwidth]{figures/hard_working_2.jpg}}
     \hfill
-    \subfloat[Ich beim Arbeiten]{\label{me_working:c}\includegraphics[width=0.3\columnwidth]{figures/hard_working_3.jpg}}
-    \label{me_working}
+    \subfloat[Ich beim Arbeiten]{\label{fig:me_working:c}\includegraphics[width=0.3\columnwidth]{figures/hard_working_3.jpg}}
     \caption{Drei Beispiele wie ich gearbeitet habe.}
+    \label{fig:me_working}
 \end{figure}
 \section{Konzeptphase}
 \section{Realisierung}
@@ -89,7 +151,7 @@
     \centering
     \includegraphics[width=0.4\columnwidth]{figures/my_product.jpg}
     \caption{Ein Bild meiner Software}
-    \label{my_product}
+    \label{fig:my_product}
 \end{figure}
 \section{Testphase}
 \section{Einführung}
